@@ -3,24 +3,23 @@ pipeline{
 	tools{
 	  maven "maven3.9.9"
 	}
-	stages{
-	  stage("clone from scm"){
-	    steps{
-	    sh "echo clone from scm"
-	    git branch: 'jan99', url: 'https://github.com/githubih/liontech-joinedproject.git'
-	    }
-	  }   
+    stages{
+      stage("clone from scm"){
+        steps{
+        sh "echo jenkins to clone frome scm"
+        git branch: 'jan99', url: 'https://github.com/githubih/liontech-joinedproject.git'
+        }
+      }
       
+
       stage("maven build"){
         steps{
-        sh "running a unit test on source code"
+        sh "echo running unit test on the source code"
         sh "maven is packaging the source code"
         sh "mvn install"
         sh "mvn verify"
+        sh "mvn validate"
         sh "mvn clean package"
-      } 
-    } 
-
-
-      	}
-}
+        }
+      }
+    }
