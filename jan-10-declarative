@@ -22,10 +22,17 @@ pipeline{
 	  }
     }
 
-	  stage("code quality analysis"){
+	  //stage("code quality analysis"){
+       // steps{
+        //sh "sonarqube code quality checks on source code"
+        //sh "mvn sonar:sonar"
+       // }
+     // }
+
+	 
+      stage("uplaod artifact to nexus"){
         steps{
-        sh "sonarqube code quality checks on source code"
-        sh "mvn sonar:sonar"
+        sh "deploy to nexus"
         }
       }
 	}
