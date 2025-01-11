@@ -21,5 +21,12 @@ pipeline{
 	    sh "mvn clean package"
 	  }
     }
+
+	  stage("code quality analysis"){
+        steps{
+        sh "sonarqube code quality checks on source code"
+        sh "mvn sonar:sonar"
+        }
+      }
 	}
 	}
