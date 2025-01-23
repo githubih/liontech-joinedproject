@@ -11,3 +11,5 @@ pipeline{
 	  git branch: 'jan23', url: 'https://github.com/githubih/liontech-joinedproject.git/'
 	  }
 	  }
+	}
+}
